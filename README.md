@@ -6,3 +6,8 @@ inside of modules I wrote myself was a far better use of
 my time than writing the same lines over and over again
 every time I want to do something in python with a
 web browser or GDrive.
+
+
+Why am I writing my own module when PyDrive exists?
+It's simple really. I don't like the way they handle
+the credentials.json

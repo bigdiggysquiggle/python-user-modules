@@ -115,10 +115,13 @@ def dl_items(drive, item):
 			dl_items(drive, file['name'])
 			os.chdir(pwd)
 			continue
-		dl_req = drive.files().get_media(fileId=file['id'])
-		out_file = io.BytesIO()
-		dl = MediaIoBaseDownload(out_file, dl_req)
-		done = False
+		try:
+			dl_req = drive.files().get_media(fileId=file['id'])
+			out_file = io.BytesIO()
+			dl = MediaIoBaseDownload(out_file, dl_req)
+			done = False
+		except:
+			print("Bad file")
 		while done == False:
 			status, done = dl.next_chunk()
 		with io.open(file['name'], 'wb') as out:

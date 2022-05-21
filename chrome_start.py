@@ -3,7 +3,9 @@
 import os
 import shelve
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.action_chains import ActionChains
 
 # TODO: see if there's a way to obtain a session id
 #       from a browser without having to start it via
@@ -22,9 +24,6 @@ def chrome_start(capabilities=None):
             #so we close the extra one
 			driver.close()
 			driver.session_id = info['id']
-			#easy check to see if remote is active
-			driver.switch_to.new_window('tab')
-			driver.close()
 			return driver
 		except:
 			os.remove('/tmp/session.shelve')

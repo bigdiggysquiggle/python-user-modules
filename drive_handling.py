@@ -39,7 +39,7 @@ import io
 import re
 
 #edit the following with your own preferred default path
-creds_path = os.path.expandvars('$HOME/Documents/config/python_user_modules/')
+creds_path = os.path.expandvars('$HOME/Documents/config/python-user-modules/')
 
 def drive_setup(SCOPES='https://www.googleapis.com/drive.metadata.readonly', token_dir=creds_path):
 	print(creds_path)

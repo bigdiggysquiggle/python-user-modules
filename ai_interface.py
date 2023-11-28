@@ -49,4 +49,4 @@ class ai_interface():
 				max_tokens=self.max_tokens,
 				temperature=self.ai_temp
 		)
-		return response.choices[0].message['content']
+		return response.choices[0].message.content

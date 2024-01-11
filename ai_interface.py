@@ -43,6 +43,8 @@ class ai_interface():
 		messages = []
 		messages.extend(self.system_prompts)
 		messages.extend(self.user_prompts)
+		self.system_prompts = []
+		self.user_prompts = []
 		response = self._ai.chat.completions.create(
 				model=self.model,
 				messages=messages,
